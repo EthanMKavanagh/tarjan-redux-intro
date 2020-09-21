@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route, Link, HashRouter as Router} from 'react-router-dom';
 import Profile from './Profile';
 import HarmonicaList from './HarmonicaList';
 import Quote from './Quote';
@@ -40,29 +41,47 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app">
-        <header>
-          <h1>Edan's Harmonicas</h1>
-        </header>
+      <Router>
+        <div id="app">
+          <header>
+            <h1>Edan's Harmonicas</h1>
+          </header>
 
-        <main>
-          <Profile 
-            name={this.state.profile.name} 
-            location={this.state.profile.location} 
-          />
+          <nav>
+            <main>
+              <ul>
+                <li><Link to="/">Profile</Link></li>
+                <li><Link to="/harmonicas">Harmonicas</Link></li>
+                <li><Link to="/quotes">Quotes</Link></li>
+              </ul>
+            </main>
+          </nav>
 
-          <HarmonicaList 
-            harmonicas={this.state.harmonicas} 
-            onDelete={this.onDelete}
-          /> 
+          <main>
+            <Route path="/" exact>
+              <Profile 
+                name={this.state.profile.name} 
+                location={this.state.profile.location} 
+              />
+            </Route>
 
-          <Quote 
-            quote={this.state.quote.quote}
-            author={this.state.quote.author}
-            image={this.state.quote.image}
-          />
-        </main>
-      </div>
+            <Route path="/harmonicas" exact>
+              <HarmonicaList 
+                harmonicas={this.state.harmonicas} 
+                onDelete={this.onDelete}
+              /> 
+            </Route>
+
+            <Route path="/quotes" exact>
+              <Quote 
+                quote={this.state.quote.quote}
+                author={this.state.quote.author}
+                image={this.state.quote.image}
+              />
+            </Route>
+          </main>
+        </div>
+      </Router>
     );
   }
 }

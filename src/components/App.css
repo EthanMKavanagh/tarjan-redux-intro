@@ -33,3 +33,12 @@ li button {
   padding: 3px 10px;
   font-size: 0.7em;
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin-right: 30px;
+}

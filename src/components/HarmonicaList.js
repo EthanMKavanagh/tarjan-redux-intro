@@ -4,7 +4,7 @@ import HarmonicaItem from './HarmonicaItem';
 class HarmonicaList extends Component {
   render() {
     return (
-      <div>
+      <section>
         <h3>My Harmonicas!</h3>
         <ul>
           {this.props.harmonicas.map((harmonica, i) => 
@@ -17,7 +17,7 @@ class HarmonicaList extends Component {
             />
           )}
         </ul>
-      </div>
+      </section>
     );
   }
 } 

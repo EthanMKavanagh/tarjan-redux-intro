@@ -1,0 +1,35 @@
+#app {
+  font-size: 1.3em;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: #a7e2ec;
+  padding: 20px 0 10px 0
+}
+
+header h1 {
+  margin: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h3 {
+  border-bottom: 2px solid #79aab2;
+  padding-bottom: 10px;
+}
+
+section {
+  padding-bottom: 40px;
+}
+
+li button {
+  margin-left: 20px;
+  padding: 3px 10px;
+  font-size: 0.7em;
+}

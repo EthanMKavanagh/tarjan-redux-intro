@@ -9,6 +9,7 @@ class HarmonicaList extends Component {
         <ul>
           {this.props.harmonicas.map((harmonica, i) => 
             <HarmonicaItem 
+              id={harmonica.id}
               brand={harmonica.brand} 
               keyOf={harmonica.keyOf}
               key={i}

@@ -14,9 +14,9 @@ class App extends Component {
       }
     },
     harmonicas: [
-      {brand: 'Hohner', keyOf: 'C'},
-      {brand: 'Suzuki', keyOf: 'G'},
-      {brand: 'Lee Oskar', keyOf: 'Am(H)'}
+      {id: 1, brand: 'Hohner', keyOf: 'C'},
+      {id: 2, brand: 'Suzuki', keyOf: 'G'},
+      {id: 3, brand: 'Lee Oskar', keyOf: 'Am(H)'}
     ],
     quote: {
       quote: `The harmonica is the world's best selling instrument. You're welcome.`,
@@ -24,13 +24,11 @@ class App extends Component {
     }
   }
 
-  onDelete = (harmonicaToDelete) => {
-    // Create a new array of harmonicas, excluding the one to delete
+  onDelete = (harmonicaId) => {
+    // Create a new array of harmonicas, 
+    // excluding the one to delete
     let nextHarmonicas = this.state.harmonicas
-      .filter(harmonica => {
-        return harmonica.brand !== harmonicaToDelete.brand ||
-          harmonica.keyof !== harmonicaToDelete.keyof;
-      });
+      .filter(harmonica => harmonica.id !== harmonicaId);
 
     // Update state with new list of harmonicas
     this.setState({

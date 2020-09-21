@@ -6,7 +6,7 @@ class HarmonicaItem extends Component {
     return (
       <li>
         {this.props.brand} in {this.props.keyOf} 
-        <button onClick={() => this.props.onDelete(this.props)}>
+        <button onClick={() => this.props.onDelete(this.props.id)}>
           Delete
         </button>
       </li>

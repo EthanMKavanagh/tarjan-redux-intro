@@ -42,3 +42,14 @@ nav li {
   display: inline-block;
   margin-right: 30px;
 }
+
+section.quote img {
+  height: 400px;
+  float: left;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.clearfix {
+  clear: both;
+}

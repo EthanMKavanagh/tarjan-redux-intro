@@ -21,7 +21,8 @@ class App extends Component {
     ],
     quote: {
       quote: `The harmonica is the world's best selling instrument. You're welcome.`,
-      author: 'Bob Dylan'
+      author: 'Bob Dylan',
+      image: 'https://www.si.edu/sites/default/files/newsdesk/press_releases/dylan_thumbnail.png'
     }
   }
 
@@ -58,6 +59,7 @@ class App extends Component {
           <Quote 
             quote={this.state.quote.quote}
             author={this.state.quote.author}
+            image={this.state.quote.image}
           />
         </main>
       </div>

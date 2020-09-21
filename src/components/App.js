@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile from './Profile';
 import HarmonicaList from './HarmonicaList';
+import Quote from './Quote';
 
 class App extends Component {
 
@@ -16,12 +17,16 @@ class App extends Component {
       {brand: 'Hohner', keyOf: 'C'},
       {brand: 'Suzuki', keyOf: 'G'},
       {brand: 'Lee Oskar', keyOf: 'Am(H)'}
-    ]
+    ],
+    quote: {
+      quote: `The harmonica is the world's best selling instrument. You're welcome.`,
+      author: 'Bob Dylan'
+    }
   }
 
   onDelete = (harmonicaToDelete) => {
     // Create a new array of harmonicas, excluding the one to delete
-    let harmonicasWithoutMatch = this.state.harmonicas
+    let nextHarmonicas = this.state.harmonicas
       .filter(harmonica => {
         return harmonica.brand !== harmonicaToDelete.brand ||
           harmonica.keyof !== harmonicaToDelete.keyof;
@@ -29,7 +34,7 @@ class App extends Component {
 
     // Update state with new list of harmonicas
     this.setState({
-      harmonicas: harmonicasWithoutMatch
+      harmonicas: nextHarmonicas
     });
   }
 
@@ -47,6 +52,11 @@ class App extends Component {
           harmonicas={this.state.harmonicas} 
           onDelete={this.onDelete}
         /> 
+
+        <Quote 
+          quote={this.state.quote.quote}
+          author={this.state.quote.author}
+        />
       </div>
     );
   }

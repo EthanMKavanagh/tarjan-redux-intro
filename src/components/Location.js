@@ -10,6 +10,13 @@ class Location extends Component {
     });
   }
 
+  onChangeState = (event) => {
+    this.props.dispatch({
+      type: 'SET_STATE',
+      payload: event.target.value
+    });
+  }
+
   render() {
     console.log('Location props:', this.props)
 
@@ -21,6 +28,11 @@ class Location extends Component {
           type="text"
           placeholder="Change City"
           onChange={this.onChangeCity}
+        />
+        <input
+          type="text"
+          placeholder="Change State"
+          onChange={this.onChangeState}
         />
       </p>
     );

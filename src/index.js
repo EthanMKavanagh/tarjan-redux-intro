@@ -25,6 +25,19 @@ const store = createStore(
         }
       }
 
+      if (action.type === 'SET_STATE') {
+        return {
+          ...state,
+          profile: {
+            ...state.profile,
+            location: {
+              ...state.profile.location,
+              state: action.payload
+            }
+          }
+        }
+      }
+
         return {
             profile: {
               name: 'Edan',

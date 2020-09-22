@@ -4,7 +4,10 @@ import {connect} from 'react-redux';
 class Location extends Component {
 
   onChangeCity = (event) => {
-    this.props.onChangeCity(event.target.value);
+    this.props.dispatch({
+      type: 'SET_CITY',
+      payload: event.target.value
+    });
   }
 
   render() {

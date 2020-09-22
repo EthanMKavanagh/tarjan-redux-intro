@@ -22,5 +22,4 @@ class HarmonicaItem extends Component {
   }
 } 
 
-
 export default withRouter(HarmonicaItem);

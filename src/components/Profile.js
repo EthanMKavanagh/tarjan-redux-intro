@@ -19,6 +19,6 @@ class Profile extends Component {
 } 
 
 const mapStateToProps = (reduxState) => ({
-  name:reduxState.profile.name
+  name: reduxState.profile.name
 });
 export default connect(mapStateToProps)(Profile);

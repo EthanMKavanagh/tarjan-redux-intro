@@ -7,26 +7,6 @@ import './App.css';
 
 class App extends Component {
 
-  state = {
-    profile: {
-      name: 'Edan',
-      location: {
-        city: 'Minneapolis',
-        state: 'MN',
-      }
-    },
-    harmonicas: [
-      {id: 1, brand: 'Hohner', keyOf: 'C'},
-      {id: 2, brand: 'Suzuki', keyOf: 'G'},
-      {id: 3, brand: 'Lee Oskar', keyOf: 'Am(H)'}
-    ],
-    quote: {
-      quote: `The harmonica is the world's best selling instrument. You're welcome.`,
-      author: 'Bob Dylan',
-      image: 'https://www.si.edu/sites/default/files/newsdesk/press_releases/dylan_thumbnail.png'
-    }
-  }
-
   onDelete = (harmonicaId) => {
     // Create a new array of harmonicas, 
     // excluding the one to delete
@@ -36,18 +16,6 @@ class App extends Component {
     // Update state with new list of harmonicas
     this.setState({
       harmonicas: nextHarmonicas
-    });
-  }
-
-  onChangeCity = (newCity) => {
-    this.setState({
-      profile: {
-        ...this.state.profile,
-        location: {
-          ...this.state.profile.location,
-          city: newCity
-        }
-      }
     });
   }
 
@@ -71,16 +39,11 @@ class App extends Component {
 
           <main>
             <Route path="/" exact>
-              <Profile 
-                onChangeCity={this.onChangeCity}
-              />
+              <Profile />
             </Route>
 
             <Route path="/harmonicas" exact>
-              <HarmonicaList 
-                harmonicas={this.state.harmonicas} 
-                onDelete={this.onDelete}
-              /> 
+              <HarmonicaList /> 
             </Route>
 
             <Route path="/quotes" exact>

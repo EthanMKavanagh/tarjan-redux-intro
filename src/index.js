@@ -7,7 +7,24 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 const store = createStore(
-    () => {
+    // The REDUCER() aka "state machine"
+    (state, action) => {
+      console.log( '[REDUCER] state is:', state);
+      console.log('[REDUCER] action is:', action);
+
+      if (action.type === 'SET_CITY') {
+        return {
+          ...state,
+          profile: {
+            ...state.profile,
+            location: {
+              ...state.profile.location,
+              city: action.payload
+            }
+          }
+        }
+      }
+
         return {
             profile: {
               name: 'Edan',

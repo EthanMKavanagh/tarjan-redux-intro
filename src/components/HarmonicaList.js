@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HarmonicaItem from './HarmonicaItem';
+import {connect} from 'react-redux';
 
 class HarmonicaList extends Component {
   render() {
@@ -22,4 +23,7 @@ class HarmonicaList extends Component {
   }
 } 
 
-export default HarmonicaList;
+const mapStateToProps = (reduxState) => ({
+  harmonicas: reduxState.harmonicas
+});
+export default connect(mapStateToProps)(HarmonicaList);

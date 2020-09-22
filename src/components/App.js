@@ -72,8 +72,6 @@ class App extends Component {
           <main>
             <Route path="/" exact>
               <Profile 
-                name={this.state.profile.name} 
-                location={this.state.profile.location} 
                 onChangeCity={this.onChangeCity}
               />
             </Route>
@@ -86,11 +84,7 @@ class App extends Component {
             </Route>
 
             <Route path="/quotes" exact>
-              <Quote 
-                quote={this.state.quote.quote}
-                author={this.state.quote.author}
-                image={this.state.quote.image}
-              />
+              <Quote />
             </Route>
           </main>
         </div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Location from './Location'
+import {connect} from 'react-redux';
 
 class Profile extends Component {
   render() {
@@ -11,10 +12,13 @@ class Profile extends Component {
         </p>
 
         <Location />
-        
+
       </section>
     );
   }
 } 
 
-export default Profile;
+const mapStateToProps = (reduxState) => ({
+  name:reduxState.profile.name
+});
+export default connect(mapStateToProps)(Profile);

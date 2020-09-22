@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Location extends Component {
 
@@ -7,9 +8,11 @@ class Location extends Component {
   }
 
   render() {
+    console.log('Location props:', this.props)
+
     return (
       <p>
-        I live in {this.props.city}, {this.props.state}
+        I live in {this.props.city}, {this.props.state}.
 
         <input
           type="text"
@@ -21,4 +24,14 @@ class Location extends Component {
   }
 } 
 
-export default Location;
+const mapStateToProps = (reduxState) => ({
+  city: reduxState.profile.location.city,
+  state: reduxState.profile.location.state
+  // reduxState (just pushes the entire state into the function)
+});
+
+// export default Location;
+// const ConnectedLocation = connect()(Location);
+// export default ConnectedLocation;
+
+export default connect(mapStateToProps)(Location);

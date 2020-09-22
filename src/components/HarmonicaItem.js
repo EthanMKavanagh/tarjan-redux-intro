@@ -4,10 +4,10 @@ import {withRouter} from 'react-router-dom'
 class HarmonicaItem extends Component {
 
   onDelete = () => {
-    this.props.onDelete(this.props.id)
-    alert(`Deleted your ${this.props.brand}. Going Home.`);
-    console.log('this.props.history:', this.props.history);
-    this.props.history.push('/');
+    this.props.dispatch({
+      type: 'DELETE_ITEM',
+      payload: this.props.id
+    });
   }
 
   render() {

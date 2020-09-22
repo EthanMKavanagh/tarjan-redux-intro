@@ -14,7 +14,6 @@ class HarmonicaList extends Component {
               brand={harmonica.brand} 
               keyOf={harmonica.keyOf}
               key={i}
-              onDelete={this.props.onDelete}
             />
           )}
         </ul>

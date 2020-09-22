@@ -39,6 +39,18 @@ class App extends Component {
     });
   }
 
+  onChangeCity = (newCity) => {
+    this.setState({
+      profile: {
+        ...this.state.profile,
+        location: {
+          ...this.state.profile.location,
+          city: newCity
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <Router>
@@ -62,6 +74,7 @@ class App extends Component {
               <Profile 
                 name={this.state.profile.name} 
                 location={this.state.profile.location} 
+                onChangeCity={this.onChangeCity}
               />
             </Route>
 

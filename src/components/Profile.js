@@ -10,7 +10,11 @@ class Profile extends Component {
           Hello my name is {this.props.name}
         </p>
 
-        <Location city={this.props.location.city} state={this.props.location.state} />
+        <Location
+          city={this.props.location.city}
+          state={this.props.location.state}
+          onChangeCity={this.props.onChangeCity}
+        />
       </section>
     );
   }

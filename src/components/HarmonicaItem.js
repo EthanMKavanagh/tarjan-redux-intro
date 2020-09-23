@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class HarmonicaItem extends Component {
 
   onDelete = () => {
     this.props.dispatch({
-      type: 'DELETE_ITEM',
+      type: 'DELETE_HARMONICA',
       payload: this.props.id
     });
+
+    alert(`Deleted your ${this.props.brand}. Going Home.`);
+    console.log('this.props.history:', this.props.history);
+    this.props.history.push('/');
   }
 
   render() {
@@ -22,4 +27,4 @@ class HarmonicaItem extends Component {
   }
 } 
 
-export default withRouter(HarmonicaItem);
+export default connect()(withRouter(HarmonicaItem));

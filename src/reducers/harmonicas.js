@@ -5,11 +5,13 @@ const initialHarmonicas = [
 ];
 
 const harmonicasReducer = (state = initialHarmonicas, action) => {
-    if (action.type === 'DELETE_ITEM') {
-        alert(`Deleted your ${this.props.brand}. Going Home.`);
-        console.log('this.props.history:', this.props.history);
-        this.props.history.push('/');
-        return state;
+    if (action.type === 'DELETE_HARMONICA') {
+        let idToDelete = action.payload;
+        console.log('Gonna delete a harp', action);
+        let myNewState = state.filter(harmonica => {
+            return harmonica.id !== idToDelete;
+        });
+        return myNewState;
     }
     
     return state;

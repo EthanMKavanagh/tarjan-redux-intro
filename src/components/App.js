@@ -6,19 +6,6 @@ import Quote from './Quote';
 import './App.css';
 
 class App extends Component {
-
-  onDelete = (harmonicaId) => {
-    // Create a new array of harmonicas, 
-    // excluding the one to delete
-    let nextHarmonicas = this.state.harmonicas
-      .filter(harmonica => harmonica.id !== harmonicaId);
-
-    // Update state with new list of harmonicas
-    this.setState({
-      harmonicas: nextHarmonicas
-    });
-  }
-
   render() {
     return (
       <Router>

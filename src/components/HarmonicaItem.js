@@ -12,7 +12,8 @@ class HarmonicaItem extends Component {
 
     alert(`Deleted your ${this.props.brand}. Going Home.`);
     console.log('this.props.history:', this.props.history);
-    this.props.history.push('/');
+    // Redirects to profile screen after a delete. Uses 'withRouter'
+    // this.props.history.push('/');
   }
 
   render() {
